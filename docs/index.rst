@@ -33,6 +33,7 @@ Welcome to the documentation!
    about
    getting_started
    usage
+   otx_to_misp
    roadmap
    license
    contact
