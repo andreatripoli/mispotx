@@ -13,7 +13,7 @@ class Config:
     def __init__(self, log):
         try:
             # Trying to read the configuration file
-            config.read('config.ini')
+            config.read('src/config.ini')
             self.log = log
 
             # Checking if the configuration file is empty (not present)
@@ -51,7 +51,7 @@ class Config:
     def set_timestamp(self, timestamp):
         try:
             config.set(section='AlienVault', option='timestamp', value=timestamp)
-            with open('config.ini', 'w') as configfile:
+            with open('src/config.ini', 'w') as configfile:
                 config.write(configfile)
         except:
             self.log.warning(f"Error updating timestamp")
@@ -98,7 +98,7 @@ class Config:
                 self.timestamp_alienvault = timestamp_alienvault
 
             # Saving changes
-            with open('config.ini', 'w') as configfile:
+            with open('src/config.ini', 'w') as configfile:
                 config.write(configfile)
 
         except FileNotFoundError:
