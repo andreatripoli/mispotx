@@ -7,7 +7,7 @@ from os.path import splitext, basename
 
 setuptools.setup(
     name="mispotx",                     # This is the name of the package
-    version="1.2.0",                        # The initial release version
+    version="1.2.1",                        # The initial release version
     author="Andrea Tripoli",                     # Full name of the author
     description="A tool to push OTXs to MISP",
     long_description="A tool to extract pulses from AlienVault and push them into your MISP instance",
@@ -21,7 +21,7 @@ setuptools.setup(
     python_requires='>=3.9',                # Minimum version requirement of the package
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    py_modules=[splitext(basename(path))[0] for path in glob('src/mispotx/util/*', recursive=True)],
+    py_modules=[splitext(basename(path))[0] for path in glob('src/mispotx/*', recursive=True)],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
