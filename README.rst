@@ -111,7 +111,7 @@ download and uploading to the *MISP* instance.
     * **-t** Paste the timestamp of the time from which you want to download the otx (e.g. 2024-01-01T03:40:26.627569)
 
 
-    The first three fields are mandatory. The timestamp, if you don't set it the first time, will take all the OTXs.
+    The first three fields are mandatory.
     **It is important to remember that every time the OTXs are downloaded, the timestamp is automatically updated with
     the latest event so that no OTX duplicates are created.**
 
@@ -138,6 +138,20 @@ Below are the options provided by **MISPOTX**.
 * **--distribution** (--distribution) Allows you to choose with which distribution to publish events (default organisation)
 * **--threat-level** (--threat-level) It allows you to choose at what threat level to publish events (default undefined)
 * **--analysis** (--analysis) It allows you to choose with which level of analysis to publish events (default completed)
+
+
+********************
+Tips
+********************
+
+Here are some tips:
+
+* It is recommended to set as much older than current in order to download all OTXs to date
+* It is recommended, after setting the keys, to set the cronjob in order to schedule the download of the OTXs.
+  The timestamp is automatically saved with the latest download to avoid duplicate OTX on MISP. This mechanism allows
+  the cronjob to work
+* Be careful because MISP event updating is not currently supported, so you run the risk of duplicate events if you
+  enter the same timestamps. We are working to support it (uid)
 
 
 ================
