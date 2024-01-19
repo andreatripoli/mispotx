@@ -1,7 +1,6 @@
 import configparser
 import sys
 
-config = configparser.ConfigParser()
 
 class Config:
     api_key_alienvault = None
@@ -9,12 +8,15 @@ class Config:
     api_key_misp = None
     instance_misp = None
     log = None
+    config = None
 
-    def __init__(self, log):
+    def __init__(self, log, config, path):
         try:
             # Trying to read the configuration file
-            config.read('src/config.ini')
             self.log = log
+            self.config = config
+            self.config.read(path)
+
 
             # Checking if the configuration file is empty (not present)
             if not config.sections():
@@ -33,7 +35,7 @@ class Config:
 
     # Get API OTX
     def get_api_key_alienvault(self):
-        self.api_key_alienvault = config.get(section='AlienVault', option='api_key')
+        self.api_key_alienvault = self.config.get(section='AlienVault', option='api_key')
         if self.api_key_alienvault == "API":
             self.log.warning(f"You need to set up the OTX API")
             sys.exit(12)
@@ -41,24 +43,24 @@ class Config:
 
     # Get Timestamp AlienVault
     def get_timestamp(self):
-        self.timestamp_alienvault = config.get(section='AlienVault', option='timestamp')
+        self.timestamp_alienvault = self.config.get(section='AlienVault', option='timestamp')
         if self.timestamp_alienvault == "TIMESTAMP":
             self.log.warning(f"You need to set up the Timestamp")
             sys.exit(12)
         return self.timestamp_alienvault
 
     # Set Timestamp AlienVault
-    def set_timestamp(self, timestamp):
+    def set_timestamp(self, timestamp, path=None):
         try:
-            config.set(section='AlienVault', option='timestamp', value=timestamp)
-            with open('src/config.ini', 'w') as configfile:
-                config.write(configfile)
+            self.config.set(section='AlienVault', option='timestamp', value=timestamp)
+            with open(path, 'w') as configfile:
+                self.config.write(configfile)
         except:
             self.log.warning(f"Error updating timestamp")
 
     # Get Instance MISP
     def get_instance_misp(self):
-        self.instance_misp = config.get(section='MISP', option='misp_instance')
+        self.instance_misp = self.config.get(section='MISP', option='misp_instance')
         if self.instance_misp == "INSTANCE":
             self.log.warning(f"You need to set up the MISP Instance")
             sys.exit(12)
@@ -66,7 +68,7 @@ class Config:
 
     # Get API MISP
     def get_api_key_misp(self):
-        self.api_key_misp = config.get(section='MISP', option='api_key')
+        self.api_key_misp = self.config.get(section='MISP', option='api_key')
         if self.api_key_misp == "API":
             self.log.warning(f"You need to set up the MISP API")
             sys.exit(12)
@@ -74,32 +76,32 @@ class Config:
 
     # Write config.ini
     def set_config(self, api_key_alienvault = None, timestamp_alienvault = None, api_key_misp = None,
-                   instance_misp = None):
+                   instance_misp = None, path=None):
         try:
             # Checking if the configuration file is empty (not present)
-            if not config.sections():
+            if not self.config.sections():
                 raise FileNotFoundError(f"The configuration file 'config.ini' was not found.")
 
             # Writing values
             if api_key_alienvault is not None:
-                config.set(section='AlienVault', option='api_key', value=api_key_alienvault)
+                self.config.set(section='AlienVault', option='api_key', value=api_key_alienvault)
                 self.api_key_alienvault = api_key_alienvault
 
             if api_key_misp is not None:
-                config.set(section='MISP', option='api_key', value=api_key_misp)
+                self.config.set(section='MISP', option='api_key', value=api_key_misp)
                 self.api_key_misp = api_key_misp
 
             if instance_misp is not None:
-                config.set(section='MISP', option='misp_instance', value=instance_misp)
+                self.config.set(section='MISP', option='misp_instance', value=instance_misp)
                 self.instance_misp = instance_misp
 
             if timestamp_alienvault is not None:
-                config.set(section='AlienVault', option='timestamp', value=timestamp_alienvault)
+                self.config.set(section='AlienVault', option='timestamp', value=timestamp_alienvault)
                 self.timestamp_alienvault = timestamp_alienvault
 
             # Saving changes
-            with open('src/config.ini', 'w') as configfile:
-                config.write(configfile)
+            with open(path, 'w') as configfile:
+                self.config.write(configfile)
 
         except FileNotFoundError:
             self.log.error("The configuration file 'config.ini' was not found.")
