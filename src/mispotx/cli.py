@@ -144,9 +144,11 @@ def create_event(pulse=None, misp_api=None, distribution=0, threat_level=4, anal
         # Event setting (TLP)
         if tlp:
             if 'TLP' in pulse:
-                mispEvent.add_tag(pulse['TLP'])
+                tag = "tlp:{}".format(pulse['TLP'])
+                mispEvent.add_tag(tag)
             elif 'tlp' in pulse:
-                mispEvent.add_tag(pulse['tlp'])
+                tag = "tlp:{}".format(pulse['tlp'])
+                mispEvent.add_tag(tag)
 
         # Event setting (TAGS)
         if pulse['tags']:
