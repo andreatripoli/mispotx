@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.abspath('../src/'))
 project = 'mispotxa'
 copyright = '2024, Andrea Tripoli'
 author = 'Andrea Tripoli'
-release = '1.0.0'
+release = '1.2.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
