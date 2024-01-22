@@ -132,12 +132,12 @@ More options
 
 Below are the options provided by **MISPOTX**.
 
-* **-n** (no-publish) It allows you to choose whether to publish events or not (default False)
-* **-a** (no-author) Allows you to choose whether to put the author's name in the Title/Info field (default False)
-* **-no-tlp** (no-tlp) Allows you to choose whether to include the tlp in the tags (default False)
-* **--distribution** (--distribution) Allows you to choose with which distribution to publish events (default organisation)
-* **--threat-level** (--threat-level) It allows you to choose at what threat level to publish events (default undefined)
-* **--analysis** (--analysis) It allows you to choose with which level of analysis to publish events (default completed)
+* **-n** (--no-publish) It allows you to choose whether to publish events or not (default False)
+* **-a** (--no-author) Allows you to choose whether to put the author's name in the Title/Info field (default False)
+* **-no-tlp** Allows you to choose whether to include the tlp in the tags (default False)
+* **--distribution** Allows you to choose with which distribution to publish events (default organisation)
+* **--threat-level** It allows you to choose at what threat level to publish events (default undefined)
+* **--analysis** It allows you to choose with which level of analysis to publish events (default completed)
 
 
 ********************
