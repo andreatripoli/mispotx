@@ -40,7 +40,7 @@ Built With
 
 This section lists all the major frameworks/libraries used to start the project.
 
-* .. image:: https://img.shields.io/badge/Python-3.12-green
+.. image:: https://img.shields.io/badge/Python-3.12-green
    :width: 90
    :alt: Python 3.12
 
