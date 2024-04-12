@@ -31,7 +31,9 @@ About The Project
 ==================
 
 **MISPOTX** was born from the need to import pulls (otx) from the AlienVault platform onto your MISP instance, trying to maintain the original features as much as possible.
-
+![Python 3.12](https://img.shields.io/badge/Python-3.12-green)
+![OTXv2 1.5.12](https://img.shields.io/badge/OTXv2-1.5.12-purple)
+![PyMISP 2.4.183](https://img.shields.io/badge/PyMISP-2.4.183-blue)
 
 
 ********************
