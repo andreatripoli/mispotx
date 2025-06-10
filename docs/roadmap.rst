@@ -13,7 +13,7 @@ Roadmap
 
 
 
-|check_| Upgrade PyMISP to version 2.4.183
+|check_| Upgrade PyMISP to version 2.5.12
 
 |check_| Upgrade OTXv2 to version 1.5.12
 

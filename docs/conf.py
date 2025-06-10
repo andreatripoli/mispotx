@@ -12,9 +12,9 @@ sys.path.insert(0, os.path.abspath('../src/'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'mispotx'
-copyright = '2024, Andrea Tripoli'
+copyright = '2025, Andrea Tripoli'
 author = 'Andrea Tripoli'
-release = '1.2.3'
+release = '1.2.4'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
