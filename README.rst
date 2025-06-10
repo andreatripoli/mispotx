@@ -47,9 +47,9 @@ This section lists all the major frameworks/libraries used to start the project.
    :width: 90
    :alt: OTXv2 1.5.12
 
-* .. image:: https://img.shields.io/badge/PyMISP-2.4.183-blue
+* .. image:: https://img.shields.io/badge/PyMISP-2.5.12-blue
    :width: 90
-   :alt: PyMISP 2.4.183
+   :alt: PyMISP 2.5.12
 
 
 ================
@@ -228,7 +228,7 @@ Roadmap
 
 
 
-|check_| Upgrade PyMISP to version 2.4.183
+|check_| Upgrade PyMISP to version 2.5.12
 
 |check_| Upgrade OTXv2 to version 1.5.12
 
