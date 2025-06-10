@@ -33,7 +33,6 @@ About The Project
 **MISPOTX** was born from the need to import pulls (otx) from the AlienVault platform onto your MISP instance, trying to maintain the original features as much as possible.
 
 
-
 ********************
 Built With
 ********************
